@@ -4,7 +4,7 @@ class Show < ActiveRecord::Base
   has_many :actors, through: :characters
   belongs_to :network
   
-  def actor_list
+  def actors_list
     self.characters.collect do |character|
       "#{character.actor.full_name}"
     end
